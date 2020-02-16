@@ -22,18 +22,20 @@ ll dist(node a, node b) {
 	return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y);
 }
 
+bool comp(node b, node c) {
+	if(ccw(a[0],b,c) != 0) {
+		return ccw(a[0],b,c) > 0;
+	}
+    else if(ccw(a[0],b,c) == 0) {
+	    return dist(a[0],b)<dist(a[0],c);
+    }
+}
+
 vector<node> getCH(vector<node>& a) {
 	//기준점 찾기
 	swap(a[0],*min_element(a.begin(),a.end()));
 	//기준점으로 부터 반시계 방향으로 정렬 
-	sort(a.begin()+1,a.end(),[&](const node &b, const node &c) {
-		if(ccw(a[0],b,c) != 0) {
-			return ccw(a[0],b,c) > 0;
-		}
-	    else if(ccw(a[0],b,c) == 0) {
-		    return dist(a[0],b) < dist(a[0],c);
-	    }
-	});
+	sort(a.begin()+1, a.end(), comp);
 	
 	vector<node> CH;
 	CH.push_back(a[0]);
