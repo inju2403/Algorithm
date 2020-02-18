@@ -12,11 +12,11 @@ void merge(int l,int mid,int r) {
 		}
 		else {
 			tmp[k++]=a[j++];
-			res+=mid-(i-1);	   // The number of swap
+			res+=mid-(i-1);	   // the number of swap
 		}
 	}
 	
-    while(j<=r) tmp[k++]=a[j++];
+	while(j<=r) tmp[k++]=a[j++];
 	while(i<=mid) tmp[k++]=a[i++];
 	
 	for(int idx=l; idx<=r; ++idx) a[idx]=tmp[idx];
