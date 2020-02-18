@@ -12,7 +12,7 @@ void merge(int l,int mid,int r) {
 		}
 		else {
 			tmp[k++]=a[j++];
-			res+=mid-(i-1);	   // swap이 일어날 횟수
+			res+=mid-(i-1);	   // The number of swap
 		}
 	}
 	
