@@ -19,6 +19,6 @@ struct Trie {
 		if(*key==0) return this;
 		int next=*key-'A';
 		if(children[next]==NULL) return NULL;
-		children[next]->insert(key+1);
+		children[next]->find(key+1);
 	}
 };
