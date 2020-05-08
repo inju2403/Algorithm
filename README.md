@@ -1,6 +1,6 @@
 # Algorithm library
 ## DP
-> 0-1 knapsack problem    
+> 0-1 Knapsack Problem    
 > Chain Matrix Multiplication (CMM)    
 > CMM with Knuth's Optimization    
 > LCS (Longest Common Subsequence)    
