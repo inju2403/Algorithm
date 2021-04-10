@@ -1,4 +1,4 @@
-//¹øÈ£°¡ ³·Àº ³ëµå·Î unionÇÏµµ·Ï ±¸ÇöÇÑ union-find 
+//ë²ˆí˜¸ê°€ ë‚®ì€ ë…¸ë“œë¡œ unioní•˜ë„ë¡ êµ¬í˜„í•œ union-find 
 
 #define FOR(i,n) for(int i=0;i<(n);++i)
 #define FORS(i,s,n) for(int i=(s);i<(n);++i)
@@ -12,7 +12,7 @@ struct node {
 vector<node> vec;
 
 int getParent(int x) {
-	return x==parent[x]? x : getParent(parent[x]);
+	return x==parent[x]? x : parent[x] = getParent(parent[x]);
 }
 
 void merge(int a,int b) {
@@ -27,7 +27,7 @@ int main() {
 		cin>>a>>b>>c;
 		vec.push_back({a,b,c});
 	}
-	//°£¼±ÀÇ ºñ¿ëÀÌ ÀÛÀº ¼ø¼­´ë·Î Á¤·Ä
+	//ê°„ì„ ì˜ ë¹„ìš©ì´ ì‘ì€ ìˆœì„œëŒ€ë¡œ ì •ë ¬
 	sort(vec.begin(),vec.end());
 	FOR(i,vec.size()) {
 		if(getParent(vec[i].u)!=getParent(vec[i].v)) {
