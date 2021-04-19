@@ -42,10 +42,11 @@ int dijkstra(int src,int sink) {
 	
     //sink부터 거슬러 올라가 path를 구한다. path를 거꾸로 출력하면 src -> sink 최소비용 경로
     int via = sink;
-    while(via) {
+    while(via!=src) {
         path.push_back(via);
         via = route[via];
     }
+    path.push_back(src);
     
     return dist[sink];
 }
