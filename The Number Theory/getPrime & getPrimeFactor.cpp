@@ -8,7 +8,6 @@ void getPrime() {
 	for (int i = 2; i*i <= MAX; ++i) {
 		if (s[i] == 0) continue;
 		for (int j = i * i; j <= MAX; j += i) {
-			if (s[j] == 0) continue;
 			s[j] = 0;
 		}
 	}
