@@ -4,18 +4,18 @@ bool s[MAX+1];
 vector<int> prime;
 
 void getPrime() {
-	for(int i=2; i<=MAX; ++i) s[i]=1;
-	for(int i=2; i*i<MAX; ++i) {
+	for(int i = 2; i < =MAX; ++i) s[i] = 1;
+	for (int i = 2; i*i <= MAX; ++i) {
 		if (s[i] == 0) continue;
 		for (int j = i * i; j <= MAX; j += i) {
+			if (s[j] == 0) continue;
 			s[j] = 0;
 		}
 	}
-	for(int i=2; i<=MAX; ++i) if(s[i]) prime.push_back(i);
+	for(int i = 2; i <= MAX; ++i) if(s[i]) prime.push_back(i);
 }
 
-
-// ¼ÒÀÎ¼ö ºÐÇØ 
+// ì†Œì¸ìˆ˜ ë¶„í•´ 
 int n,minFactor[MAX+1];
 
 void getPrime2(int n) {
@@ -23,7 +23,7 @@ void getPrime2(int n) {
 	for(int i=2; i*i<=n; ++i) {
 		if (minFactor[i] == i)
 		for (int j = i * i; j <= MAX; j += i) {
-			//¾ÆÁ÷ ¾à¼ö¸¦ º» Àû ¾ø´Â ¼ýÀÚÀÎ °æ¿ì¿¡ °»½Å
+			//ì•„ì§ ì•½ìˆ˜ë¥¼ ë³¸ ì  ì—†ëŠ” ìˆ«ìžì¸ ê²½ìš°ì— ê°±ì‹ 
 			if(minFactor[j] == j) 
 				minFactor[j] = i;
 		}
