@@ -46,9 +46,11 @@ struct Trie {
     }
     
     bool find(string& s,int idx) {
-        if(idx==s.size()) return false;
-        if(terminal) return true;
-        int next = s[idx]-'A';
+        if(idx==s.size()) {
+            if(terminal==true) return true;
+            else return false;
+        }
+        int next = s[idx]-'0';
         if(children[next]==NULL) return false;
         return children[next]->find(s,idx+1);
     }
